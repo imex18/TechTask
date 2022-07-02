@@ -1,4 +1,4 @@
-package com.example.techtask
+package com.example.techtask.ui
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
