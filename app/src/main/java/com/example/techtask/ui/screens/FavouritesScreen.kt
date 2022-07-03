@@ -15,7 +15,7 @@ import com.example.techtask.ui.AlbumsViewModel
 import com.example.techtask.ui.views.AlbumItemView
 
 @Composable
-fun AlbumListScreen(viewModel: AlbumsViewModel = hiltViewModel()) {
+fun FavouritesScreen(viewModel: AlbumsViewModel = hiltViewModel()) {
 
     val state by viewModel.albumListState.collectAsState()
 

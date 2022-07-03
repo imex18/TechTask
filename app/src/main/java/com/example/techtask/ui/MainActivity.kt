@@ -7,7 +7,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
 import androidx.compose.ui.Modifier
-import com.example.techtask.ui.screens.AlbumListScreen
+import com.example.techtask.ui.screens.MainScreen
 import com.example.techtask.ui.theme.TechTaskTheme
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -18,7 +18,7 @@ class MainActivity : ComponentActivity() {
         setContent {
             TechTaskTheme {
                 Surface(modifier = Modifier.fillMaxSize(), color = MaterialTheme.colors.background) {
-                    AlbumListScreen()
+                    MainScreen()
                 }
             }
         }
