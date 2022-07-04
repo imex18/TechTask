@@ -64,7 +64,7 @@ fun RowScope.AddItem(
         icon = {
             Icon(
                 imageVector = screen.icon,
-                contentDescription = "Navigation Icon"
+                contentDescription = ""
             )
         },
         selected = currentDestination?.hierarchy?.any {

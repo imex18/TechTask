@@ -19,20 +19,24 @@ import com.example.techtask.ui.views.LoadingView
 @Composable
 fun AlbumListScreen(viewModel: AlbumsViewModel) {
 
-    val state by viewModel.albumListState.collectAsState()
+    val albums by viewModel.albumListState.collectAsState()
     val isLoading by viewModel.isLoading.collectAsState()
     val favourites by viewModel.favouriteAlbums.collectAsState()
 
     Box(modifier = Modifier.fillMaxSize()) {
 
         LazyColumn(modifier = Modifier.background(color = Color.Transparent)) {
-            itemsIndexed(items = state) { index, listItem ->
+            itemsIndexed(items = albums) { index, listItem ->
                 AlbumItemView(
                     modifier = Modifier.padding(top = if (index == 0) 5.dp else 0.dp),
                     albumItem = listItem,
                     isSavedToFavourites = listItem in favourites,
                     onFavouriteClicked = {
-                        viewModel.addFavourite(listItem)
+                        if (listItem in favourites) {
+                            viewModel.removeFavourite(listItem)
+                        } else {
+                            viewModel.addFavourite(listItem)
+                        }
                     }
                 )
             }

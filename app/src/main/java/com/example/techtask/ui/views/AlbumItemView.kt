@@ -50,7 +50,7 @@ fun AlbumItemView(
                     .padding(end = 30.dp)
             ) {
                 Text(
-                    text = "title: ",
+                    text = "Title: ",
                     style = Typography.h1.copy(color = Color.Gray)
                 )
                 Text(
