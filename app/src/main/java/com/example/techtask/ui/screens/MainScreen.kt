@@ -10,22 +10,24 @@ import androidx.compose.material.Scaffold
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
+import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavDestination
 import androidx.navigation.NavDestination.Companion.hierarchy
 import androidx.navigation.NavGraph.Companion.findStartDestination
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
+import com.example.techtask.ui.AlbumsViewModel
 import com.example.techtask.ui.navigation.BottomNavGraph
 import com.example.techtask.ui.navigation.BottomNavigationMenu
 
 @Composable
-fun MainScreen() {
+fun MainScreen(viewModel: AlbumsViewModel = hiltViewModel()) {
     val navController = rememberNavController()
     Scaffold(
         bottomBar = { BottomBar(navController = navController) }
     ) {
-        BottomNavGraph(navController = navController)
+        BottomNavGraph(navController = navController, viewModel = viewModel)
     }
 }
 

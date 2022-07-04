@@ -25,9 +25,14 @@ import com.example.techtask.data.models.Album
 import com.example.techtask.ui.theme.Typography
 
 @Composable
-fun AlbumItemView(modifier: Modifier = Modifier, albumItem: Album, onFavouriteClicked: () -> Unit) {
+fun AlbumItemView(
+    modifier: Modifier = Modifier,
+    albumItem: Album,
+    isSavedToFavourites: Boolean,
+    onFavouriteClicked: () -> Unit
+) {
 
-    var isFavourite by remember { mutableStateOf(false) }
+    var isFavourite by remember { mutableStateOf(isSavedToFavourites) }
 
     Surface(
         modifier = modifier
