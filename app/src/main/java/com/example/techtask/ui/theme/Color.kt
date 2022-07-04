@@ -2,7 +2,9 @@ package com.example.techtask.ui.theme
 
 import androidx.compose.ui.graphics.Color
 
-val Purple200 = Color(0xFFBB86FC)
-val Purple500 = Color(0xFF6200EE)
-val Purple700 = Color(0xFF3700B3)
-val Teal200 = Color(0xFF03DAC5)
+object TechTaskColors {
+    val GreyBlue200 = Color(0xFFc1d5e0)
+    val GreyBlue500 = Color(0xFF90a4ae)
+    val GreyBlue700 = Color(0xFF62757f)
+    val Teal200 = Color(0xFF03DAC5)
+}

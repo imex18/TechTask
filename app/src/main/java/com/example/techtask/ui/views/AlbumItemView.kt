@@ -22,6 +22,7 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import com.example.techtask.R
 import com.example.techtask.data.models.Album
+import com.example.techtask.ui.theme.TechTaskColors
 import com.example.techtask.ui.theme.Typography
 
 @Composable
@@ -64,7 +65,7 @@ fun AlbumItemView(
                     id = R.drawable.ic_baseline_favorite_border_24
                 ),
                 contentDescription = "",
-                tint = if (isFavourite) Color.Black else Color.Gray,
+                tint = TechTaskColors.GreyBlue700,
                 modifier = Modifier
                     .align(Alignment.TopEnd)
                     .clip(shape = RoundedCornerShape(5.dp))

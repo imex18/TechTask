@@ -5,16 +5,20 @@ import androidx.compose.material.MaterialTheme
 import androidx.compose.material.darkColors
 import androidx.compose.material.lightColors
 import androidx.compose.runtime.Composable
+import com.example.techtask.ui.theme.TechTaskColors.GreyBlue200
+import com.example.techtask.ui.theme.TechTaskColors.GreyBlue500
+import com.example.techtask.ui.theme.TechTaskColors.GreyBlue700
+import com.example.techtask.ui.theme.TechTaskColors.Teal200
 
 private val DarkColorPalette = darkColors(
-    primary = Purple200,
-    primaryVariant = Purple700,
+    primary = GreyBlue200,
+    primaryVariant = GreyBlue700,
     secondary = Teal200
 )
 
 private val LightColorPalette = lightColors(
-    primary = Purple500,
-    primaryVariant = Purple700,
+    primary = GreyBlue500,
+    primaryVariant = GreyBlue700,
     secondary = Teal200
 
     /* Other default colors to override
