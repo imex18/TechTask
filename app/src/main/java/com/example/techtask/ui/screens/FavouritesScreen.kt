@@ -11,6 +11,7 @@ import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.unit.dp
 import com.example.techtask.ui.AlbumsViewModel
 import com.example.techtask.ui.views.AlbumItemView
@@ -22,7 +23,7 @@ fun FavouritesScreen(viewModel: AlbumsViewModel) {
     val state by viewModel.favouriteAlbums.collectAsState()
     val isLoading by viewModel.isLoading.collectAsState()
 
-    Box(modifier = Modifier.fillMaxSize()) {
+    Box(modifier = Modifier.fillMaxSize().testTag("Favourite Screen")) {
 
         LazyColumn(modifier = Modifier.background(color = Color.Transparent)) {
             itemsIndexed(items = state) { index, listItem ->
