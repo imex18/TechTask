@@ -1,10 +1,10 @@
-package com.example.techtask.data
+package com.example.techtask.domain
 
+import com.example.techtask.data.RetrofitInstance
 import com.example.techtask.data.models.Album
-import javax.inject.Inject
 import retrofit2.Response
 
-class AlbumsRepository @Inject constructor() {
+interface AlbumsRepository {
 
     suspend fun getAlbums(): Response<List<Album>> {
         return RetrofitInstance.api.getAlbums()

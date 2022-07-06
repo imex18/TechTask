@@ -1,7 +1,6 @@
 package com.example.techtask.domain
 
 import android.util.Log
-import com.example.techtask.data.AlbumsRepository
 import javax.inject.Inject
 
 class FetchAlbumsUseCase @Inject constructor(
