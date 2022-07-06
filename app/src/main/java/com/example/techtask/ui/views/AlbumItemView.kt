@@ -21,14 +21,14 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import com.example.techtask.R
-import com.example.techtask.data.models.Album
+import com.example.techtask.ui.AlbumItem
 import com.example.techtask.ui.theme.TechTaskColors
 import com.example.techtask.ui.theme.Typography
 
 @Composable
 fun AlbumItemView(
     modifier: Modifier = Modifier,
-    albumItem: Album,
+    albumItem: AlbumItem,
     isSavedToFavourites: Boolean,
     onFavouriteClicked: () -> Unit
 ) {
