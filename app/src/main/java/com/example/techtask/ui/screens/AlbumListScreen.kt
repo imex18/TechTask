@@ -28,7 +28,6 @@ fun AlbumListScreen(viewModel: AlbumsViewModel) {
                 AlbumItemView(
                     modifier = Modifier.padding(top = if (index == 0) 5.dp else 0.dp),
                     albumItem = listItem,
-                    isSavedToFavourites = listItem.isFavourite,
                     onFavouriteClicked = {
                         if (listItem.isFavourite) {
                             viewModel.onRemoveFavourite(listItem.id.toInt())

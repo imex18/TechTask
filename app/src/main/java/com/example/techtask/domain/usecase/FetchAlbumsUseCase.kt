@@ -1,6 +1,8 @@
-package com.example.techtask.domain
+package com.example.techtask.domain.usecase
 
 import android.util.Log
+import com.example.techtask.domain.repository.AlbumsRepository
+import com.example.techtask.domain.store.AlbumsStore
 import javax.inject.Inject
 
 class FetchAlbumsUseCase @Inject constructor(

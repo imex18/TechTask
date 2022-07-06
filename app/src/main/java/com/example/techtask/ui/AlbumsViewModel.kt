@@ -2,9 +2,9 @@ package com.example.techtask.ui
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.techtask.domain.AddFavouriteUseCase
-import com.example.techtask.domain.FetchAlbumsUseCase
-import com.example.techtask.domain.RemoveFavouriteUseCase
+import com.example.techtask.domain.usecase.AddFavouriteUseCase
+import com.example.techtask.domain.usecase.FetchAlbumsUseCase
+import com.example.techtask.domain.usecase.RemoveFavouriteUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 import kotlinx.coroutines.launch

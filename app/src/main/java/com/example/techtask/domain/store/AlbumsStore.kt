@@ -1,6 +1,6 @@
-package com.example.techtask.domain
+package com.example.techtask.domain.store
 
-import com.example.techtask.data.models.Album
+import com.example.techtask.domain.models.Album
 import javax.inject.Inject
 import javax.inject.Singleton
 import kotlinx.coroutines.flow.MutableStateFlow

@@ -10,10 +10,6 @@ import androidx.compose.material.Icon
 import androidx.compose.material.Surface
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
-import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
@@ -21,7 +17,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import com.example.techtask.R
-import com.example.techtask.ui.AlbumItem
+import com.example.techtask.ui.models.AlbumItem
 import com.example.techtask.ui.theme.TechTaskColors
 import com.example.techtask.ui.theme.Typography
 
@@ -29,11 +25,8 @@ import com.example.techtask.ui.theme.Typography
 fun AlbumItemView(
     modifier: Modifier = Modifier,
     albumItem: AlbumItem,
-    isSavedToFavourites: Boolean,
     onFavouriteClicked: () -> Unit
 ) {
-
-    var isFavourite by remember { mutableStateOf(isSavedToFavourites) }
 
     Surface(
         modifier = modifier
@@ -61,7 +54,7 @@ fun AlbumItemView(
             }
 
             Icon(
-                painter = if (isFavourite) painterResource(id = R.drawable.ic_baseline_favorite_24) else painterResource(
+                painter = if (albumItem.isFavourite) painterResource(id = R.drawable.ic_baseline_favorite_24) else painterResource(
                     id = R.drawable.ic_baseline_favorite_border_24
                 ),
                 contentDescription = "",
@@ -70,7 +63,6 @@ fun AlbumItemView(
                     .align(Alignment.TopEnd)
                     .clip(shape = RoundedCornerShape(5.dp))
                     .clickable {
-                        isFavourite = !isFavourite
                         onFavouriteClicked()
                     }
             )

@@ -1,6 +1,8 @@
 package com.example.techtask.ui
 
-import com.example.techtask.domain.AlbumsStore
+import com.example.techtask.domain.store.AlbumsStore
+import com.example.techtask.ui.models.AlbumItem
+import com.example.techtask.ui.models.MainScreenUiState
 import javax.inject.Inject
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -9,7 +11,6 @@ import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.combine
 import kotlinx.coroutines.flow.flowOn
 import kotlinx.coroutines.flow.stateIn
-
 
 class MainScreenUiMapper @Inject constructor(private val albumStore: AlbumsStore) {
     fun map(scope: CoroutineScope): StateFlow<MainScreenUiState> {
@@ -29,5 +30,3 @@ class MainScreenUiMapper @Inject constructor(private val albumStore: AlbumsStore
     }
 }
 
-data class AlbumItem(val id: String, val title: String, val isFavourite: Boolean = false)
-data class MainScreenUiState(val albumsList: List<AlbumItem>, val isLoading: Boolean)

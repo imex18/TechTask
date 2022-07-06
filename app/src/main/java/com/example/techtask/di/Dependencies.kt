@@ -1,7 +1,7 @@
 package com.example.techtask.di
 
 import com.example.techtask.data.AlbumsRepositoryImpl
-import com.example.techtask.domain.AlbumsRepository
+import com.example.techtask.domain.repository.AlbumsRepository
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

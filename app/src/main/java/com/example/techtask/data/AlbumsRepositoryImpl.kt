@@ -1,7 +1,7 @@
 package com.example.techtask.data
 
-import com.example.techtask.data.models.Album
-import com.example.techtask.domain.AlbumsRepository
+import com.example.techtask.domain.models.Album
+import com.example.techtask.domain.repository.AlbumsRepository
 import javax.inject.Inject
 import retrofit2.Response
 

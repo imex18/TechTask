@@ -1,6 +1,6 @@
 package com.example.techtask.data
 
-import com.example.techtask.data.models.Album
+import com.example.techtask.domain.models.Album
 import retrofit2.Response
 import retrofit2.http.GET
 

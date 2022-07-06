@@ -1,7 +1,7 @@
-package com.example.techtask.domain
+package com.example.techtask.domain.repository
 
 import com.example.techtask.data.RetrofitInstance
-import com.example.techtask.data.models.Album
+import com.example.techtask.domain.models.Album
 import retrofit2.Response
 
 interface AlbumsRepository {

@@ -1,4 +1,4 @@
-package com.example.techtask.data.models
+package com.example.techtask.domain.models
 
 data class Album(
     val userId: Int = 0,

@@ -33,7 +33,6 @@ fun FavouritesScreen(viewModel: AlbumsViewModel) {
                 AlbumItemView(
                     modifier = Modifier.padding(top = if (index == 0) 5.dp else 0.dp),
                     albumItem = listItem,
-                    isSavedToFavourites = true
                 ) {
                     viewModel.onRemoveFavourite(listItem.id.toInt())
                 }
