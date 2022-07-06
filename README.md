@@ -27,8 +27,6 @@ Areas to grow
 -----------------
 As mentioned this is a simple implementation of MVVM and the following can be improved.
 
-   * Architecture - Implemenent and additional abstraction layer by adding UseCases, also add elements of Redux for State Management which will lead to a even more granular code base.
-   * State - Unify the screen state in a single UiScreenStateClass. This will save the trouble to listen to multiple StateFlow object in the ViewModel.
    * Persistence - At the moment the favourites are saved in a list that is not persistent. To solve this, we either can save locally the list of ids for favourite items 
                  and fetch them from the API, or save the list of albums in a local data base (won't be a big trouble for this particular project but would be quite heavy for bigger projects).
    * UI - Add animation when an item is removed from favourites. Generally , the UI is simple and could use a bit more love :) .
