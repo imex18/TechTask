@@ -9,4 +9,8 @@ interface AlbumsRepository {
     suspend fun getAlbums(): Response<List<Album>> {
         return RetrofitInstance.api.getAlbums()
     }
+
+    fun saveFavAlbumsIds(ids: String)
+
+    fun getFavAlbumsIds(): String?
 }
