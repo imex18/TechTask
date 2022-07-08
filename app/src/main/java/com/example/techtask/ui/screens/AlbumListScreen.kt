@@ -11,9 +11,13 @@ import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
+import com.example.techtask.R
+import com.example.techtask.domain.store.ErrorState
 import com.example.techtask.ui.AlbumsViewModel
 import com.example.techtask.ui.views.AlbumItemView
+import com.example.techtask.ui.views.ErrorDialog
 import com.example.techtask.ui.views.LoadingView
 
 @Composable
@@ -41,6 +45,19 @@ fun AlbumListScreen(viewModel: AlbumsViewModel) {
 
         if (state.isLoading) {
             LoadingView()
+        }
+        when (state.errorState) {
+            ErrorState.Unknown -> {}
+            ErrorState.NetworkError -> {
+                ErrorDialog(
+                    titleText = stringResource(id = R.string.network_error),
+                    message = stringResource(id = R.string.loading_data_error_message),
+                    buttonText = stringResource(id = R.string.retry)
+                ) {
+                    viewModel.resetError()
+                    viewModel.fetchAlbumsFromRemote()
+                }
+            }
         }
     }
 }

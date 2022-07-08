@@ -11,4 +11,10 @@ class AlbumsStore @Inject constructor() {
     val albums = MutableStateFlow<List<Album>>(emptyList())
     val favourites = MutableStateFlow<List<Int>>(emptyList())
     val isLoading = MutableStateFlow(false)
+    val errorState = MutableStateFlow(ErrorState.Unknown)
+}
+
+enum class ErrorState {
+    Unknown,
+    NetworkError,
 }

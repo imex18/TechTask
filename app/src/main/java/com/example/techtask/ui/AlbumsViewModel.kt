@@ -6,6 +6,7 @@ import com.example.techtask.domain.usecase.AddFavouriteUseCase
 import com.example.techtask.domain.usecase.FetchAlbumsUseCase
 import com.example.techtask.domain.usecase.FetchFavouritesUseCase
 import com.example.techtask.domain.usecase.RemoveFavouriteUseCase
+import com.example.techtask.domain.usecase.ResetErrorStateUseCase
 import com.example.techtask.domain.usecase.SaveFavouritesUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
@@ -18,6 +19,7 @@ class AlbumsViewModel @Inject constructor(
     private val removeFavourite: RemoveFavouriteUseCase,
     private val saveFavourites: SaveFavouritesUseCase,
     private val fetchFavourites: FetchFavouritesUseCase,
+    private val resetErrorState: ResetErrorStateUseCase,
     private val uiMapper: MainScreenUiMapper
 ) : ViewModel() {
 
@@ -32,11 +34,20 @@ class AlbumsViewModel @Inject constructor(
         removeFavourite(albumId)
     }
 
-    fun onActivityCreated() {
+    fun fetchAlbumsFromRemote() {
         viewModelScope.launch {
             fetchAlbums()
-            fetchFavourites()
         }
+    }
+
+    fun resetError() {
+        resetErrorState()
+    }
+
+    fun onActivityCreated() {
+        fetchAlbumsFromRemote()
+        fetchFavourites()
+
     }
 
     fun onActivityStopped() {

@@ -1,6 +1,7 @@
 package com.example.techtask.ui
 
 import com.example.techtask.domain.store.AlbumsStore
+import com.example.techtask.domain.store.ErrorState
 import com.example.techtask.ui.models.AlbumItem
 import com.example.techtask.ui.models.MainScreenUiState
 import javax.inject.Inject
@@ -18,15 +19,20 @@ class MainScreenUiMapper @Inject constructor(private val albumStore: AlbumsStore
             albumStore.albums,
             albumStore.favourites,
             albumStore.isLoading,
-            transform = { albums, favourites, isLoading ->
+            albumStore.errorState,
+            transform = { albums, favourites, isLoading, errorState ->
                 val albumsList = albums.map {
                     AlbumItem(id = it.id.toString(), title = it.title, isFavourite = it.id in favourites)
                 }
-                MainScreenUiState(albumsList = albumsList, isLoading = isLoading)
+                MainScreenUiState(albumsList = albumsList, isLoading = isLoading, errorState = errorState)
             }
         )
             .flowOn(Dispatchers.IO)
-            .stateIn(scope, SharingStarted.WhileSubscribed(), MainScreenUiState(emptyList(), false))
+            .stateIn(
+                scope,
+                SharingStarted.WhileSubscribed(),
+                MainScreenUiState(emptyList(), false, errorState = ErrorState.Unknown)
+            )
     }
 }
 

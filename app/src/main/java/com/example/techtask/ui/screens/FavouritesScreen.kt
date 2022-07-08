@@ -14,8 +14,10 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.testTag
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.example.techtask.R
 import com.example.techtask.ui.AlbumsViewModel
 import com.example.techtask.ui.views.AlbumItemView
 import com.example.techtask.ui.views.LoadingView
@@ -28,7 +30,7 @@ fun FavouritesScreen(viewModel: AlbumsViewModel) {
     Box(
         modifier = Modifier
             .fillMaxSize()
-            .testTag("Favourite Screen")
+            .testTag(stringResource(id = R.string.favourite_screen))
     ) {
 
         LazyColumn(modifier = Modifier.background(color = Color.Transparent)) {
@@ -43,7 +45,11 @@ fun FavouritesScreen(viewModel: AlbumsViewModel) {
         }
 
         if (state.albumsList.none { it.isFavourite }) {
-            Text(text = "No favourites yet!", fontSize = 16.sp, modifier = Modifier.align(alignment = Alignment.Center))
+            Text(
+                text = stringResource(id = R.string.no_favourites),
+                fontSize = 16.sp,
+                modifier = Modifier.align(alignment = Alignment.Center)
+            )
         }
 
         if (state.isLoading) {

@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">TechTask</string>
+    <string name="title">Title &#160;</string>
+    <string name="retry">Retry</string>
+    <string name="network_error">Network Error</string>
+    <string name="loading_data_error_message">We could not load the data, please try again!</string>
+    <string name="favourite_screen">Favourite Screen</string>
+    <string name="no_favourites">"No favourites yet!"</string>
+
 </resources>
